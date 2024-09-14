@@ -24,7 +24,7 @@ class Developer {
 }
 
 function greet(p: Person) {
-  console.log(`Hello, I'm ${p.name}`);
+  console.log(`Hello, I'm ${p.sleepTime}`);
 }
 
 const developer = new Developer("zig", 20, 7);
