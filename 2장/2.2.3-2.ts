@@ -12,3 +12,5 @@ let cat: Cat = { name: "Zag", age: 2 };
 
 // ✅ OK
 pet = cat;
+
+console.log(pet)
