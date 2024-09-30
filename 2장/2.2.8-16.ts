@@ -26,5 +26,12 @@ type ValueOfUnion<T> = T extends {[key:string]:unknown}
                       : T extends ReadonlyArray<any>
                       ? ArrayUnion<T>
                       : never
+ type test = ValueOfUnion<typeof Direction>
 
-type test = ValueOfUnion<typeof Direction>
+type Union<T> = T extends ReadonlyArray<any>
+              ? T[number]
+              : T extends {[key:string]:infer U}
+              ? U
+              : never
+
+type test2 = Union<typeof StatusArr>
