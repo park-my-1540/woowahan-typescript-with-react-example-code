@@ -5,11 +5,23 @@ enum Direction {
   Right, // 3
 }
 
+const enum Shape {
+  triangle,
+  circle,
+}
+
 const Status = {
   pending: 0,
   success: 1,
   fail: 2
 } as const;
+
+const foo = (): void => { // never로 착각할 수 있는
+  let err;
+  if (err) {
+    throw new Error();
+  }
+};
 
 const StatusArr = ["pending", "success", "fail"] as const;
 
@@ -26,7 +38,7 @@ type ValueOfUnion<T> = T extends {[key:string]:unknown}
                       : T extends ReadonlyArray<any>
                       ? ArrayUnion<T>
                       : never
- type test = ValueOfUnion<typeof Direction>
+ type test = ValueOfUnion<typeof StatusArr>
 
 type Union<T> = T extends ReadonlyArray<any>
               ? T[number]
