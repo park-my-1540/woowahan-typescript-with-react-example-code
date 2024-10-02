@@ -1,4 +1,4 @@
-const enum NUMBER {
+enum NUMBER {
   ONE = 1,
   TWO = 2,
 }
